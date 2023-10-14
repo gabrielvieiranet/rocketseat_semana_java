@@ -32,16 +32,22 @@ public class FilterTaskAuth extends OncePerRequestFilter {
         
         // pegar a autenticacao (usuario e senha)
         var authorization = request.getHeader("Authorization");
+
+        if(authorization == null){
+            response.sendError(401);
+            return;
+        }
+
         var authEncoded = authorization.substring("Basic ".length());
         byte[] authDecoded = Base64.getDecoder().decode(authEncoded);
         var authString = new String(authDecoded);
         String[] credentials = authString.split(":");
         String username = credentials[0];
         String password = credentials[1];
-
+        
         System.out.println(username);
         System.out.println(password);
-
+        
         // validar usuario
         var user = this.iUserRepository.findByUsername(username);
         if(user == null) {

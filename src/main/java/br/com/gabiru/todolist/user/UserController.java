@@ -13,7 +13,7 @@ import at.favre.lib.crypto.bcrypt.BCrypt;
 @RestController
 @RequestMapping("/users")
 public class UserController {
-    
+
     @Autowired
     private IUserRepository userRepository;
 
@@ -26,7 +26,7 @@ public class UserController {
         }
 
         var passwordHashed = BCrypt.withDefaults()
-            .hashToString(12, userModel.getPassword().toCharArray());
+                .hashToString(12, userModel.getPassword().toCharArray());
 
         userModel.setPassword(passwordHashed);
 
