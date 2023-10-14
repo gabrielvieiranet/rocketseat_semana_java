@@ -1,4 +1,4 @@
-# ROCKETSEAT - SEMANA JAVA
+# ROCKETSEAT - SEMANA JAVA :coffee:
 
 Este projeto de duração de 1 semana no formato de aulas em vídeo foi uma iniciativa da [Rocketseat](https://www.rocketseat.com.br) para promover a nova trilha de **Java**.
 
